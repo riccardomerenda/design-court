@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using DesignCourt.Agents;
@@ -13,6 +14,12 @@ internal static class Program
 
     public static async Task<int> Main(string[] args)
     {
+        if (args.Length == 1 && IsVersionOption(args[0]))
+        {
+            Console.WriteLine($"design-court {GetVersion()}");
+            return 0;
+        }
+
         if (args.Length < 2 || !string.Equals(args[0], "review", StringComparison.OrdinalIgnoreCase))
         {
             PrintUsage();
@@ -63,9 +70,24 @@ internal static class Program
         return options;
     }
 
+    private static bool IsVersionOption(string value)
+    {
+        return string.Equals(value, "--version", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(value, "-v", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string GetVersion()
+    {
+        return typeof(Program).Assembly
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion
+            ?? "0.0.0-local";
+    }
+
     private static void PrintUsage()
     {
         Console.Error.WriteLine("Usage:");
+        Console.Error.WriteLine("  design-court --version");
         Console.Error.WriteLine("  design-court review <markdown-file>");
     }
 }

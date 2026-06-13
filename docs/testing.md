@@ -9,6 +9,7 @@ Run these commands from the repository root:
 ```powershell
 dotnet build DesignCourt.slnx
 dotnet test DesignCourt.slnx
+dotnet run --project src/DesignCourt.Cli -- --version
 dotnet run --project src/DesignCourt.Cli -- review samples/rfcs/payment-rfc-missing-rollback.md
 ```
 
@@ -18,6 +19,7 @@ The seeded RFC at `samples/rfcs/payment-rfc-missing-rollback.md` contains a dest
 
 Expected behavior:
 
+- `design-court --version` reports the current SemVer preview version;
 - the CLI parses 5 sections;
 - the local workflow produces 1 judged finding;
 - the finding title is `Missing rollback strategy for database migration`;
