@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\DesignCourt.Core\DesignCourt.Core.csproj" />
+    <ProjectReference Include="..\DesignCourt.Parsing\DesignCourt.Parsing.csproj" />
+    <ProjectReference Include="..\DesignCourt.Reporting\DesignCourt.Reporting.csproj" />
+    <ProjectReference Include="..\DesignCourt.Agents\DesignCourt.Agents.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

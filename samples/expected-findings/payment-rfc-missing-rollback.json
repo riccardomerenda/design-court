@@ -1,0 +1,11 @@
+[
+  {
+    "id": "EXP-001",
+    "title": "Missing rollback strategy for database migration",
+    "category": "operability",
+    "severity": "high",
+    "sectionId": "database-migration-plan",
+    "quote": "The migration will remove deprecated columns after data transformation.",
+    "reason": "The RFC describes a destructive schema migration but does not define a rollback or recovery procedure."
+  }
+]

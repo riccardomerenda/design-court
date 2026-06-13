@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DesignCourt.Agents/DesignCourt.Agents.csproj" />
+    <Project Path="src/DesignCourt.Cli/DesignCourt.Cli.csproj" />
+    <Project Path="src/DesignCourt.Core/DesignCourt.Core.csproj" />
+    <Project Path="src/DesignCourt.Parsing/DesignCourt.Parsing.csproj" />
+    <Project Path="src/DesignCourt.Reporting/DesignCourt.Reporting.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DesignCourt.Agents.Tests/DesignCourt.Agents.Tests.csproj" />
+    <Project Path="tests/DesignCourt.Core.Tests/DesignCourt.Core.Tests.csproj" />
+    <Project Path="tests/DesignCourt.Parsing.Tests/DesignCourt.Parsing.Tests.csproj" />
+  </Folder>
+</Solution>
