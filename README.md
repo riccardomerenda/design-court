@@ -2,8 +2,8 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![.NET](https://img.shields.io/badge/.NET-10-512BD4.svg)](global.json)
-[![Version](https://img.shields.io/github/v/tag/riccardomerenda/design-court?label=version&sort=semver)](docs/releases.md)
-[![CI](https://github.com/riccardomerenda/design-court/actions/workflows/ci.yml/badge.svg)](https://github.com/riccardomerenda/design-court/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/github/v/release/riccardomerenda/design-court?include_prereleases&label=version&sort=semver)](docs/releases.md)
+[![CI](https://github.com/riccardomerenda/design-court/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/riccardomerenda/design-court/actions/workflows/ci.yml)
 [![Status](https://img.shields.io/badge/status-engineering%20preview-f59e0b.svg)](#status)
 
 **A technical court for software design documents.**

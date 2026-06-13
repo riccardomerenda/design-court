@@ -33,7 +33,7 @@ Release tags should use the same SemVer value prefixed with `v`:
 v0.1.0-alpha.1
 ```
 
-The README version badge reads the latest GitHub tag.
+The README version badge reads the latest GitHub Release, including prereleases.
 
 ## Release Checklist
 
@@ -61,6 +61,12 @@ Create an annotated tag for release versions:
 git tag -a v0.1.0-alpha.1 -m "Release v0.1.0-alpha.1"
 git push origin main
 git push origin v0.1.0-alpha.1
+```
+
+Create a prerelease from the pushed tag:
+
+```powershell
+gh release create v0.1.0-alpha.1 --prerelease --title "v0.1.0-alpha.1" --notes "Engineering preview release for the local review skeleton."
 ```
 
 ## Automation Roadmap
