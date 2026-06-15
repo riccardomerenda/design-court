@@ -43,6 +43,7 @@ Before creating a tag:
 dotnet build DesignCourt.slnx
 dotnet test DesignCourt.slnx
 dotnet run --project src/DesignCourt.Cli -- review samples/rfcs/payment-rfc-missing-rollback.md
+dotnet run --project src/DesignCourt.Cli -- eval
 dotnet run --project src/DesignCourt.Cli -- --version
 ```
 
@@ -50,6 +51,7 @@ Then verify:
 
 - `design-court-output/report.md` includes the expected accepted finding.
 - `design-court-output/findings.json` uses snake_case enum values.
+- `design-court eval` reports precision, recall, and F1 of `1.00` and a false-positive rate of `0.00`.
 - `docs/testing.md` matches the actual verification flow.
 - `README.md` accurately describes implemented and missing features.
 

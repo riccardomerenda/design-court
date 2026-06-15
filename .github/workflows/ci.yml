@@ -36,3 +36,6 @@ jobs:
 
       - name: CLI smoke test
         run: dotnet run --project src/DesignCourt.Cli -- review samples/rfcs/payment-rfc-missing-rollback.md
+
+      - name: Evaluation smoke test
+        run: dotnet run --project src/DesignCourt.Cli -- eval

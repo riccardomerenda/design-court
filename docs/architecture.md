@@ -46,4 +46,4 @@ The repository currently includes:
 - `DesignCourt.Reporting` for Markdown report rendering.
 - `DesignCourt.Cli` for the local command entrypoint.
 
-The next implementation slice should add the evaluation command and metric reporting before introducing real LLM provider infrastructure.
+The evaluation command and metric reporting are now implemented. The next implementation slice should add the Security Attacker and Ambiguity Reviewer agents (the multi-agent MVP) before introducing real LLM provider infrastructure.

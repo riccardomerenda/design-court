@@ -48,6 +48,7 @@ Implemented:
 - Local review workflow.
 - Markdown and JSON report output.
 - Seeded sample RFC and clean control.
+- Benchmark manifest and `design-court eval` with precision, recall, F1, and false-positive rate.
 - Unit and functional tests.
 - Testing and code review guide.
 - SemVer source version and CI workflow.
@@ -56,7 +57,6 @@ Not implemented yet:
 
 - LLM provider integration.
 - Microsoft Agent Framework adapter.
-- `design-court eval`.
 - GitHub Action.
 - Multi-agent MVP roles beyond Operations.
 
@@ -69,6 +69,7 @@ dotnet build DesignCourt.slnx
 dotnet test DesignCourt.slnx
 dotnet run --project src/DesignCourt.Cli -- --version
 dotnet run --project src/DesignCourt.Cli -- review samples/rfcs/payment-rfc-missing-rollback.md
+dotnet run --project src/DesignCourt.Cli -- eval
 ```
 
 The CLI writes:
@@ -108,6 +109,28 @@ The seeded RFC contains a destructive database migration without a rollback plan
   ]
 }
 ```
+
+## Evaluation
+
+Design Court measures review quality against a seeded benchmark corpus:
+
+```powershell
+dotnet run --project src/DesignCourt.Cli -- eval
+```
+
+This runs the review workflow over every case in `samples/benchmark.json`, compares reportable findings to the expected findings, and writes `design-court-output/eval-report.md` and `design-court-output/eval-metrics.json`.
+
+Current expected output on the seeded corpus:
+
+```text
+Evaluated 2 benchmark case(s).
+Precision: 1.00
+Recall: 1.00
+F1: 1.00
+False-positive rate: 0.00
+```
+
+See [docs/evaluation.md](docs/evaluation.md) for the manifest format, matching rule, and metric definitions.
 
 ## Design Principles
 

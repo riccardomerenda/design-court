@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "document": "rfcs/payment-rfc-missing-rollback.md",
+      "expected": "expected-findings/payment-rfc-missing-rollback.json"
+    },
+    {
+      "document": "clean-controls/payment-rfc-clean.md",
+      "expected": null
+    }
+  ]
+}

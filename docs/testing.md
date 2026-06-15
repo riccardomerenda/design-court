@@ -11,6 +11,7 @@ dotnet build DesignCourt.slnx
 dotnet test DesignCourt.slnx
 dotnet run --project src/DesignCourt.Cli -- --version
 dotnet run --project src/DesignCourt.Cli -- review samples/rfcs/payment-rfc-missing-rollback.md
+dotnet run --project src/DesignCourt.Cli -- eval
 ```
 
 ## Functional Review Scenario
@@ -46,6 +47,19 @@ Expected behavior:
 - the functional test `RunAsync_produces_no_findings_for_clean_control` passes;
 - the deterministic Operations Engineer Agent does not emit a false positive.
 
+## Benchmark Evaluation Scenario
+
+`design-court eval` runs the review workflow over `samples/benchmark.json` and compares reportable findings to the expected findings.
+
+Expected behavior on the seeded corpus:
+
+- 2 benchmark cases are evaluated;
+- precision, recall, and F1 are `1.00`;
+- the false-positive rate is `0.00`;
+- the CLI writes `design-court-output/eval-report.md` and `design-court-output/eval-metrics.json`.
+
+See [evaluation.md](evaluation.md) for the manifest format, matching rule, and metric definitions.
+
 ## Code Review Checklist
 
 Before committing, review the change against these points:
@@ -60,6 +74,6 @@ Before committing, review the change against these points:
 
 ## Current Test Coverage
 
-- `DesignCourt.Core.Tests`: finding invariant validation.
+- `DesignCourt.Core.Tests`: finding invariant validation and benchmark metric computation.
 - `DesignCourt.Parsing.Tests`: Markdown section parsing and quote verification.
-- `DesignCourt.Agents.Tests`: end-to-end local review workflow on seeded and clean samples.
+- `DesignCourt.Agents.Tests`: end-to-end local review workflow and benchmark evaluation on seeded and clean samples.
